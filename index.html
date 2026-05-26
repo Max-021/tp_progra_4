@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineCritic - Reseñas de Películas</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <!-- El título ahora es un link al inicio -->
+            <h1><a href="./index.html" class="logo-link">CineCritic</a></h1>
+            <nav class="nav-links">
+                <a href="./index.html">Inicio</a>
+                <a href="./pages/contact.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Nueva Sección: Carrusel Hero -->
+        <section class="hero-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="slide-content">
+                            <span class="badge">Especial</span>
+                            <h2>El Arte del Cine Clásico</h2>
+                            <p>Exploramos las obras maestras que sentaron las bases del cine moderno y cómo su influencia sigue viva hoy.</p>
+                            <a href="#" class="btn">Leer Artículo</a>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="slide-content">
+                            <span class="badge">Próximos Estrenos</span>
+                            <h2>Lo más esperado del 2026</h2>
+                            <p>Un repaso exclusivo por las películas de ciencia ficción y drama que prometen romper la taquilla.</p>
+                            <a href="#" class="btn">Ver Calendario</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1200&q=80');">
+                        <div class="slide-content">
+                            <span class="badge">Recomendado</span>
+                            <h2>Detrás de Cámaras</h2>
+                            <p>Entrevistas exclusivas con los directores más influyentes de la industria actual.</p>
+                            <a href="#" class="btn">Ver Videos</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controles del Carrusel -->
+                <button class="carousel-btn prev-btn" id="prev-btn">&#10094;</button>
+                <button class="carousel-btn next-btn" id="next-btn">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Sección Original: Últimas Reseñas -->
+        <section style="margin-top: var(--spacing-lg); text-align: center;">
+            <h2>Últimas Reseñas</h2>
+            <p>Nuestra opinión sobre los estrenos más recientes y clásicos del cine.</p>
+        </section>
+
+        <section class="movies-grid">
+            <!-- Tarjeta 1 -->
+            <article class="movie-card">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" alt="Pelicula Sci-Fi" class="movie-img">
+                <div class="movie-info">
+                    <h3>Odisea Espacial</h3>
+                    <div class="rating">★★★★☆ 4/5</div>
+                    <p>Una visualización impresionante del futuro, aunque el tercer acto se siente un poco apresurado. Excelente fotografía.</p>
+                    <button class="btn btn-like">Me gusta esta reseña</button>
+                </div>
+            </article>
+
+            <!-- Tarjeta 2 -->
+            <article class="movie-card">
+                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=800&q=80" alt="Pelicula Drama" class="movie-img">
+                <div class="movie-info">
+                    <h3>El Relojero</h3>
+                    <div class="rating">★★★★★ 5/5</div>
+                    <p>Una obra maestra del suspenso psicológico. Las actuaciones te mantienen al borde del asiento de principio a fin.</p>
+                    <button class="btn btn-like">Me gusta esta reseña</button>
+                </div>
+            </article>
+
+            <!-- Tarjeta 3 -->
+            <article class="movie-card">
+                <img src="https://images.unsplash.com/photo-1533928298208-27ff66555d8d?auto=format&fit=crop&w=800&q=80" alt="Pelicula Acción" class="movie-img">
+                <div class="movie-info">
+                    <h3>Escape a Medianoche</h3>
+                    <div class="rating">★★★☆☆ 3/5</div>
+                    <p>Divertida y con buenas secuencias de acción, pero la trama es predecible y los diálogos algo flojos.</p>
+                    <button class="btn btn-like">Me gusta esta reseña</button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 - CineCritic. TP Desarrollo Web por Maxi.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/scripts.js"></script>
+</body>
+</html>

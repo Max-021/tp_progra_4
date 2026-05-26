@@ -1,0 +1,323 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+/* --- 1. Variables Globales --- */
+:root {
+  --font-serif: 'Merriweather', serif;
+  --font-sans: 'Roboto', sans-serif;
+  
+  --bg-body: #121212;
+  --bg-card: #1e1e1e;
+  --bg-navbar: #000000;
+  --text-main: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --accent-color: #e50914; 
+  --accent-hover: #b20710;
+  
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1.2rem;
+  --spacing-lg: 2.5rem;
+  --radius: 8px;
+}
+
+/* --- 2. Reset Básico --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+/* --- 3. Tipografía Base --- */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  color: #ffffff;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* --- 4. Clases Reutilizables --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* --- Header / Navbar --- */
+.navbar {
+  background-color: var(--bg-navbar);
+  padding: var(--spacing-md) 0;
+  border-bottom: 2px solid var(--bg-card);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.logo-link {
+  color: #ffffff;
+}
+
+.logo-link:hover {
+  color: var(--text-main); /* Evitamos que el logo se ponga rojo al pasar el mouse */
+}
+
+/* --- Sección: Carrusel Hero --- */
+.hero-carousel {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden; /* Esto es vital para que no se vean las fotos de los costados */
+  border-radius: var(--radius);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  height: 450px; 
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  /* No le pongas ancho fijo, que el flex lo maneje solo */
+  transition: transform 0.5s ease-in-out;
+  will-change: transform; /* Ayuda a que la animación sea más fluida */
+}
+
+.carousel-slide {
+  flex: 0 0 100%; /* EXPLICACIÓN: No crece, no se achica, mide siempre el 100% del padre */
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+/* Capa oscura sobre la imagen para legibilidad del texto */
+.carousel-slide::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
+  z-index: 1;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  padding: var(--spacing-lg);
+  width: 100%;
+  max-width: 800px;
+}
+
+.slide-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slide-content p {
+  color: #f0f0f0;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.badge {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Controles del Carrusel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+  transition: background-color 0.3s;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+
+/* --- Grilla para reseñas --- */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.movie-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-info {
+  padding: var(--spacing-md);
+}
+
+.rating {
+  color: gold;
+  font-weight: bold;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* --- Formularios --- */
+.form-group {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--bg-body);
+  border: 1px solid var(--text-muted);
+  color: var(--text-main);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* --- Footer --- */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--bg-navbar);
+}
+
+/* --- 5. Responsividad (Desktop First) --- */
+@media (max-width: 1024px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .movies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-img {
+    height: 450px;
+  }
+  
+  /* Ajustes Carrusel Mobile */
+  .carousel-container {
+    height: 350px;
+  }
+  .slide-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-lg: 1.5rem;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+
+  .movie-img {
+    height: 300px;
+  }
+}
