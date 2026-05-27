@@ -12,8 +12,20 @@
         <div class="container">
             <!-- El título ahora es un link al inicio -->
             <h1><a href="./index.html" class="logo-link">CineCritic</a></h1>
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
             <nav class="nav-links">
                 <a href="./index.html">Inicio</a>
+                <a href="./pages/about.html">Nosotros</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Cartelera ▾</a>
+                    <div class="dropdown-content">
+                        <a href="./pages/cartelera.html?filter=accion">Acción</a>
+                        <a href="./pages/cartelera.html?filter=drama">Drama</a>
+                        <a href="./pages/cartelera.html?filter=scifi">Ciencia Ficción</a>
+                        <a href="./pages/cartelera.html?filter=all">Todos</a>
+                    </div>
+                </div>
+                <a href="./pages/gallery.html">Galería</a>
                 <a href="./pages/contact.html">Contacto</a>
             </nav>
         </div>

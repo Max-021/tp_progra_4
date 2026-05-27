@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - CineCritic</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1><a href="../index.html" class="logo-link">CineCritic</a></h1>
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+            <nav class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="./about.html">Nosotros</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Cartelera ▾</a>
+                    <div class="dropdown-content">
+                        <a href="./cartelera.html?filter=accion">Acción</a>
+                        <a href="./cartelera.html?filter=drama">Drama</a>
+                        <a href="./cartelera.html?filter=scifi">Ciencia Ficción</a>
+                        <a href="./cartelera.html?filter=all">Todos</a>
+                    </div>
+                </div>
+                <a href="./gallery.html">Galería</a>
+                <a href="./contact.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: var(--spacing-lg);">
+        <section class="gallery-section">
+            <h2 style="text-align: center;">Galería de Imágenes</h2>
+            <p style="text-align: center;">Haz clic en las imágenes para ampliarlas.</p>
+            
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" alt="Cine 1" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=800&q=80" alt="Cine 2" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=80" alt="Cine 3" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=800&q=80" alt="Cine 4" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80" alt="Cine 5" class="gallery-img">
+                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=800&q=80" alt="Cine 6" class="gallery-img">
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 - CineCritic. TP Desarrollo Web por Maxi.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/scripts.js"></script>
+</body>
+</html>

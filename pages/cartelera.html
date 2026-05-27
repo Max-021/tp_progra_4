@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartelera - CineCritic</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1><a href="../index.html" class="logo-link">CineCritic</a></h1>
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+            <nav class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="./about.html">Nosotros</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Cartelera ▾</a>
+                    <div class="dropdown-content">
+                        <a href="./cartelera.html?filter=accion">Acción</a>
+                        <a href="./cartelera.html?filter=drama">Drama</a>
+                        <a href="./cartelera.html?filter=scifi">Ciencia Ficción</a>
+                        <a href="./cartelera.html?filter=all">Todos</a>
+                    </div>
+                </div>
+                <a href="./gallery.html">Galería</a>
+                <a href="./contact.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: var(--spacing-lg);">
+        <section class="cartelera-section">
+            <h2 style="text-align: center;">Cartelera de Estrenos</h2>
+            <p style="text-align: center;">Filtra las películas por género.</p>
+            
+            <div class="filter-container">
+                <button class="btn filter-btn active" data-filter="all">Todos</button>
+                <button class="btn filter-btn" data-filter="accion">Acción</button>
+                <button class="btn filter-btn" data-filter="drama">Drama</button>
+                <button class="btn filter-btn" data-filter="scifi">Ciencia Ficción</button>
+            </div>
+
+            <div class="movies-grid" id="cartelera-grid">
+                <!-- Tarjeta 1 -->
+                <article class="movie-card filter-item scifi">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" alt="Pelicula Sci-Fi" class="movie-img">
+                    <div class="movie-info">
+                        <h3>Odisea Espacial</h3>
+                        <p>Género: Ciencia Ficción</p>
+                        <button class="btn btn-trailer">Ver Tráiler</button>
+                    </div>
+                </article>
+                <!-- Tarjeta 2 -->
+                <article class="movie-card filter-item drama">
+                    <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=800&q=80" alt="Pelicula Drama" class="movie-img">
+                    <div class="movie-info">
+                        <h3>El Relojero</h3>
+                        <p>Género: Drama</p>
+                        <button class="btn btn-trailer">Ver Tráiler</button>
+                    </div>
+                </article>
+                <!-- Tarjeta 3 -->
+                <article class="movie-card filter-item accion">
+                    <img src="https://images.unsplash.com/photo-1533928298208-27ff66555d8d?auto=format&fit=crop&w=800&q=80" alt="Pelicula Acción" class="movie-img">
+                    <div class="movie-info">
+                        <h3>Escape a Medianoche</h3>
+                        <p>Género: Acción</p>
+                        <button class="btn btn-trailer">Ver Tráiler</button>
+                    </div>
+                </article>
+                <!-- Tarjeta 4 -->
+                <article class="movie-card filter-item scifi">
+                    <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=800&q=80" alt="Pelicula Sci-Fi 2" class="movie-img">
+                    <div class="movie-info">
+                        <h3>Estrella Fugaz</h3>
+                        <p>Género: Ciencia Ficción</p>
+                        <button class="btn btn-trailer">Ver Tráiler</button>
+                    </div>
+                </article>
+                <!-- Tarjeta 5 -->
+                <article class="movie-card filter-item accion">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" alt="Pelicula Acción 2" class="movie-img">
+                    <div class="movie-info">
+                        <h3>Persecución Total</h3>
+                        <p>Género: Acción</p>
+                        <button class="btn btn-trailer">Ver Tráiler</button>
+                    </div>
+                </article>
+                <!-- Tarjeta 6 -->
+                <article class="movie-card filter-item drama">
+                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=800&q=80" alt="Pelicula Drama 2" class="movie-img">
+                    <div class="movie-info">
+                        <h3>Caminos Cruzados</h3>
+                        <p>Género: Drama</p>
+                        <button class="btn btn-trailer">Ver Tráiler</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para el Tráiler -->
+    <div id="trailer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Tráiler</h2>
+            <p>Reproduciendo el tráiler... (Simulación)</p>
+            <div class="video-placeholder"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 - CineCritic. TP Desarrollo Web por Maxi.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/scripts.js"></script>
+</body>
+</html>

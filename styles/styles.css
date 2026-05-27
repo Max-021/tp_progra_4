@@ -97,6 +97,10 @@ a:hover {
   align-items: center;
 }
 
+.navbar h1 {
+  margin-bottom: 0; /* Para alinear perfectamente con el menú hamburguesa */
+}
+
 .nav-links {
   display: flex;
   gap: var(--spacing-lg);
@@ -108,6 +112,51 @@ a:hover {
 
 .logo-link:hover {
   color: var(--text-main); /* Evitamos que el logo se ponga rojo al pasar el mouse */
+}
+
+/* --- Dropdown --- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-card);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+  z-index: 100;
+  border-radius: var(--radius);
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: var(--text-main);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--accent-color);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* --- Menu Hamburguesa --- */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
 /* --- Sección: Carrusel Hero --- */
@@ -278,6 +327,199 @@ footer {
   background-color: var(--bg-navbar);
 }
 
+/* --- Sección: Nosotros (Acordeón) --- */
+.accordion {
+  margin-top: var(--spacing-md);
+  border: 1px solid var(--text-muted);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--text-muted);
+}
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: none;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.accordion-header:hover, .accordion-header.active {
+  background-color: #2a2a2a;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: var(--bg-body);
+}
+
+.accordion-content p {
+  padding: 1rem;
+  margin: 0;
+}
+
+/* --- Sección: Cartelera (Filtros y Modal) --- */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+}
+.filter-btn.active, .filter-btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* Ocultar elementos filtrados */
+.filter-item.hide {
+  display: none;
+}
+
+/* Modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 100; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8); 
+}
+
+.modal-content {
+  background-color: var(--bg-card);
+  margin: 10% auto; 
+  padding: 20px;
+  border-radius: var(--radius);
+  width: 80%; 
+  max-width: 600px;
+  position: relative;
+}
+
+.close-modal {
+  color: var(--text-muted);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 300px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: var(--spacing-md);
+  border-radius: var(--radius);
+}
+.video-placeholder::after {
+  content: "▶";
+  font-size: 4rem;
+  color: var(--accent-color);
+}
+
+/* --- Sección: Galería (Lightbox) --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: var(--radius);
+}
+
+#lightbox-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: var(--accent-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* --- 5. Responsividad (Desktop First) --- */
 @media (max-width: 1024px) {
   .movies-grid {
@@ -287,8 +529,40 @@ footer {
 
 @media (max-width: 768px) {
   .navbar .container {
+    flex-wrap: wrap;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
     flex-direction: column;
+    width: 100%;
+    text-align: center;
     gap: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    text-align: center;
+    padding: 8px;
   }
   
   .movies-grid {

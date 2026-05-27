@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - CineCritic</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1><a href="../index.html" class="logo-link">CineCritic</a></h1>
+            <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+            <nav class="nav-links">
+                <a href="../index.html">Inicio</a>
+                <a href="./about.html">Nosotros</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Cartelera ▾</a>
+                    <div class="dropdown-content">
+                        <a href="./cartelera.html?filter=accion">Acción</a>
+                        <a href="./cartelera.html?filter=drama">Drama</a>
+                        <a href="./cartelera.html?filter=scifi">Ciencia Ficción</a>
+                        <a href="./cartelera.html?filter=all">Todos</a>
+                    </div>
+                </div>
+                <a href="./gallery.html">Galería</a>
+                <a href="./contact.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 800px; margin-top: var(--spacing-lg);">
+        <section class="about-section movie-card" style="padding: var(--spacing-lg);">
+            <h2>Sobre CineCritic</h2>
+            <p>Somos un equipo de apasionados por el séptimo arte. Nuestro objetivo es brindarte las mejores reseñas, noticias y análisis del mundo del cine.</p>
+            
+            <h3 style="margin-top: var(--spacing-lg);">Preguntas Frecuentes</h3>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">¿Cómo seleccionamos las películas para reseñar?</button>
+                    <div class="accordion-content">
+                        <p>Elegimos los estrenos más relevantes y también clásicos a pedido de nuestra comunidad.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">¿Puedo colaborar con CineCritic?</button>
+                    <div class="accordion-content">
+                        <p>¡Sí! Envíanos tu sugerencia o reseña a través de la página de contacto y la evaluaremos.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">¿Con qué frecuencia publican nuevo contenido?</button>
+                    <div class="accordion-content">
+                        <p>Publicamos nuevas reseñas y noticias todas las semanas, generalmente los días jueves coincidiendo con los estrenos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 - CineCritic. TP Desarrollo Web por Maxi.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/scripts.js"></script>
+</body>
+</html>
